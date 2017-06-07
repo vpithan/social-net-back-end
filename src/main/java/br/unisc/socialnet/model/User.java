@@ -1,7 +1,6 @@
 package br.unisc.socialnet.model;
 
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "SN_User")
-public class User implements Serializable {
+@Table(name = "SN_Users")
+public class User extends AbstractModel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -20,26 +19,6 @@ public class User implements Serializable {
     private String name;
     private String email;
     private String password;
-    @Column(name = "create_at")
-    private Long createAt;
-    @Column(name = "update_at")
-    private Long updateAt;
-
-    public Long getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(Long createAt) {
-        this.createAt = createAt;
-    }
-
-    public Long getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(Long updateAt) {
-        this.updateAt = updateAt;
-    }
 
     public Long getId() {
         return id;
@@ -47,6 +26,30 @@ public class User implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
